@@ -1,0 +1,225 @@
+/* RESET */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--bg: #ffffff;
+	--text: #111;
+	--card: #f4f4f4;
+	--main: #2563eb;
+}
+
+/* DARK MODE */
+body.dark {
+	--bg: #0f172a;
+	--text: #e5e7eb;
+	--card: #1e293b;
+}
+
+body {
+	font-family: Segoe UI;
+	background: var(--bg);
+	color: var(--text);
+	transition: 0.4s;
+}
+
+/* CONTAINER */
+.container {
+	width: 90%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 0 40px;
+}
+
+/* HERO */
+.hero {
+	background: linear-gradient(135deg, #2563eb, #06b6d4);
+	color: white;
+	padding: 80px 0;
+}
+
+.hero-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 40px;
+}
+
+.hero h1 {
+	font-size: 2.8rem;
+	margin-bottom: 10px;
+}
+
+.hero p {
+	font-size: 1.3rem;
+	margin-bottom: 25px;
+}
+/*  Navbar  */
+.hero nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #0a0a0a;
+	display: flex;
+	justify-content: center; /* Linklar markazga */
+	align-items: center;
+	padding: 1rem 40px;
+	z-index: 1000;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+/* NAV LINKS */
+.hero nav a {
+	color: white;
+	text-decoration: none;
+	font-weight: 500;
+	margin: 0 15px; /* linklar orasidagi masofa */
+	padding: 8px 12px; /* klik qilish uchun joy */
+	transition: 0.3s;
+}
+
+.hero nav a:hover {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 6px;
+}
+
+/* IMAGE */
+.hero-image-container img {
+	width: 260px;
+	height: 260px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 6px solid white;
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* THEME BUTTON */
+.theme-btn {
+	position: fixed; /* Ekran bilan birga turadi */
+	top: 20px;
+	right: 20px;
+	z-index: 2000; /* nav ustidan turishi uchun yuqori qiymat */
+	border: none;
+	padding: 12px 14px;
+	border-radius: 50%;
+	cursor: pointer;
+	background: #ffffff;
+	color: #111;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+}
+
+.theme-btn:hover {
+	transform: scale(1.1);
+}
+/* SECTIONS */
+.section {
+	padding: 90px 0;
+}
+
+.section h2 {
+	text-align: center;
+	margin-bottom: 50px;
+	font-size: 2.2rem;
+}
+
+.bg {
+	background: var(--card);
+}
+
+/* SKILLS */
+.skills {
+	display: flex;
+	gap: 15px;
+	justify-content: center;
+	list-style: none;
+}
+
+.skills li {
+	background: var(--main);
+	color: white;
+	padding: 10px 18px;
+	border-radius: 20px;
+}
+
+/* PROJECTS */
+.projects {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 25px;
+}
+
+.project-card {
+	background: var(--card);
+	padding: 25px;
+	border-radius: 14px;
+	transition: 0.3s;
+}
+
+.project-card:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+}
+
+.project-card a {
+	display: inline-block;
+	margin-top: 10px;
+	color: var(--main);
+	text-decoration: none;
+}
+
+/* CONTACT */
+.contact-links {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+.contact-links a {
+	background: var(--main);
+	color: white;
+	padding: 12px 20px;
+	border-radius: 8px;
+	text-decoration: none;
+}
+
+/* FOOTER */
+.footer {
+	text-align: center;
+	padding: 30px;
+	background: #111;
+	color: white;
+}
+
+/* SCROLL ANIMATION */
+.reveal {
+	opacity: 0;
+	transform: translateY(40px);
+	transition: 1s;
+}
+
+.reveal.active {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+	.hero-content {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.container {
+		padding: 0 20px;
+	}
+
+	.hero-image-container img {
+		width: 200px;
+		height: 200px;
+	}
+}
